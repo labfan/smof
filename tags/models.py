@@ -11,7 +11,7 @@ class Tag(models.Model):
     def __str__(self):
         return self.name
 
-
+@python_2_unicode_compatible
 class Genre(hvad.TranslatableModel):
     translations = hvad.TranslatedFields(
             title=models.CharField(max_length=200)
