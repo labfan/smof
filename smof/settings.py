@@ -41,8 +41,6 @@ INSTALLED_APPS = [
     # 'convents.apps.ConventsConfig',
     'tags.apps.TagsConfig',
     'actors.apps.ActorsConfig',
-    # 'awards.apps.AwardsConfig',
-    # 'i18n.apps.I18NConfig',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -93,7 +91,7 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.9/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'en'
 
 TIME_ZONE = 'UTC'
 

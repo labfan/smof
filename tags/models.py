@@ -10,5 +10,5 @@ class Tag(models.Model):
 
 class Genre(hvad.TranslatableModel):
     translations = hvad.TranslatedFields(
-        title = models.CharField(max_length=200)
+            title=models.CharField(max_length=200)
     )

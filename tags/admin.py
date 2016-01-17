@@ -8,5 +8,6 @@ from tags import models
 class GenreAdmin(hvad_admin.TranslatableAdmin):
     pass
 
+
 admin.site.register(models.Tag)
 admin.site.register(models.Genre, GenreAdmin)
