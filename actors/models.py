@@ -2,12 +2,18 @@ from __future__ import unicode_literals
 
 from django.contrib.auth import models as auth
 from django.db import models
+from django.utils.encoding import python_2_unicode_compatible
 
 
+@python_2_unicode_compatible
 class Profile(models.Model):
-    user = models.ForeignKey(auth.User)
+    user = models.OneToOneField(auth.User)
+
+    def __str__(self):
+        return '%s: %d tokens' % (self.user.username, len(self.profiletoken_set.all()))
 
 
+@python_2_unicode_compatible
 class ProfileToken(models.Model):
     FANTLAB = 'fantlab'
     FACEBOOK = 'facebook'
@@ -22,6 +28,9 @@ class ProfileToken(models.Model):
     source = models.CharField(choices=SOURCE_CHOICES, max_length=20)
     access_token = models.CharField(max_length=64)
     refresh_token = models.CharField(max_length=64)
+
+    def __str__(self):
+        return self.source + ' token'
 
 
 class Participant(models.Model):
