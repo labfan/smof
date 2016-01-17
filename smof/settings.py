@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'hvad',
-    # 'convents.apps.ConventsConfig',
+    'convents.apps.ConventsConfig',
     'tags.apps.TagsConfig',
     'actors.apps.ActorsConfig',
 ]
