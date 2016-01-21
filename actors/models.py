@@ -29,6 +29,9 @@ class ProfileToken(models.Model):
     access_token = models.CharField(max_length=64)
     refresh_token = models.CharField(max_length=64)
 
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
     def __str__(self):
         return self.source + ' token'
 
@@ -39,3 +42,7 @@ class Participant(models.Model):
                                 blank=True,
                                 null=True,
                                 db_index=True)
+    honoured_guest = models.BooleanField(default=False, db_index=True)
+
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
